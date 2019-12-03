@@ -1,7 +1,6 @@
 ---
 title: "Find a Gene"
 author: "Yasmine Kasiri"
-date: "11/20/2019"
 output: github_document
 ---
 
