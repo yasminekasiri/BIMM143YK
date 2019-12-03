@@ -18,4 +18,3 @@ This is my work from [BIMM 143 F19 at UCSD](https://bioboot.github.io/bimm143_F1
 - Class16: [Network Analysis](https://github.com/yasminekasiri/bimm143YK/blob/master/class17/class17.md)
 - Class18: [Cancer Genomics](https://github.com/yasminekasiri/bimm143YK/blob/master/class%2018/class18.md)
 - [Find a Gene Project](https://github.com/yasminekasiri/bimm143YK/blob/master/findagene/find%20a%20gene.md)
-
