@@ -1,7 +1,6 @@
 ---
 title: "class 17"
 author: "Yasmine Kasiri"
-date: "11/19/2019"
 output: github_document
 ---
 
