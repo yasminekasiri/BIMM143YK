@@ -1,0 +1,87 @@
+---
+title: "Find a Gene"
+author: "Yasmine Kasiri"
+date: "11/20/2019"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(bio3d)
+```
+
+```{r}
+clust <- read.fasta("clustal fasta")
+
+clust
+```
+
+```{r}
+matrix <- seqidentity(clust)
+```
+
+```{r}
+heat <- heatmap(matrix, Rowv = NULL, Colv = NULL, margins = c(10,10))
+```
+
+```{r}
+x <- consensus(matrix)
+x
+
+```
+```{r}
+library(bio3d)
+```
+
+```{r}
+aln <- read.fasta("clustal fasta")
+aln
+```
+
+```{r}
+con <- consensus(aln)$seq
+con
+```
+
+```{r}
+blast <- blast.pdb(con)
+blast
+```
+
+```{r}
+hits <- plot(blast)
+```
+
+
+```{r}
+hits
+```
+
+```{r}
+annotate <- pdb.annotate(hits$pdb.id)
+annotate
+```
+
+```{r}
+seq<-"MNYSKIPAQVDLRRQTERDCRVSSFRVKENFDKARFSGTWYAMAKKDPEGLFLQDNIVAEFSVDETGQMS
+ATAKGRVRLLNNWDVCADMVGTFTDTEDPAKFKMKYWGVASFLQKGNDDHWIVDTDYDTYAVQYSCRLLN
+LDGTCADSYSFVFSRDPNGLPPEAQKIVRQRQEELCLARQYRLIVHNGYCDGRSERNLL"
+test<-blast.pdb(seq)
+test
+```
+
+```{r}
+blast.pdb(x)
+```
+
+
+
+```{r}
+pdb.annotate(seq)
+```
+
+
+
