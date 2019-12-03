@@ -1,7 +1,6 @@
 ---
 title: "class 15: Pathway Analysis from RNA-Seq Results"
 author: "Yasmine Kasiri"
-date: "11/14/2019"
 output: github_document
 ---
 
