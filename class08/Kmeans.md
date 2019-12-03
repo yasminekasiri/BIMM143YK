@@ -1,0 +1,146 @@
+---
+title: "Class 08 Machine Learning"
+author: "Yasmine Kasiri"
+date: "10/24/2019"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## K means clustering
+
+```{r}
+# Generate some example data for clustering
+tmp <- c(rnorm(30,-3), rnorm(30,3))
+x <- cbind(x=tmp, y=rev(tmp))
+plot(x)
+```
+
+```{r}
+k <- kmeans(x, centers = 2, nstart = 20)
+```
+
+```{r}
+k
+```
+
+```{r}
+k$cluster
+```
+
+```{r}
+plot(x, col=k$cluster)
+points(k$centers, col="blue", pch = 15)
+```
+
+
+
+## Heirarchincal clustering in R
+the hclust() function requires a distance matrix as input. You can get this from the dist() function
+
+```{r}
+dist_matrix <- dist(x)
+hc <- hclust(dist_matrix)
+```
+
+```{r}
+hc
+```
+
+```{r}
+plot(hc)
+abline(h=6, col="red")
+grps <- cutree(hc, h = 6)
+```
+
+```{r}
+# Step 1. Generate some example data for clustering
+x <- rbind(
+ matrix(rnorm(100, mean=0, sd = 0.3), ncol = 2), # c1
+ matrix(rnorm(100, mean = 1, sd = 0.3), ncol = 2), # c2
+ matrix(c(rnorm(50, mean = 1, sd = 0.3), # c3
+ rnorm(50, mean = 0, sd = 0.3)), ncol = 2))
+colnames(x) <- c("x", "y")
+# Step 2. Plot the data without clustering
+plot(x)
+# Step 3. Generate colors for known clusters
+# (just so we can compare to hclust results)
+col <- as.factor( rep(c("c1","c2","c3"), each=50) )
+plot(x, col=col)
+```
+
+```{r}
+kmeans(x, centers = 3, nstart = 20)
+h <- hclust(dist(x))
+plot(h)
+abline(h=2, col="purple")
+grps <- cutree(h, h=3)
+grps
+```
+
+```{r}
+table(grps, col)
+```
+
+```{r}
+x <- read.csv("data/UK_foods.csv")
+```
+
+```{r}
+mydata <- read.csv("https://tinyurl.com/expression-CSV",
+ row.names=1)
+head(mydata)
+```
+
+```{r}
+dim(mydata)
+nrow(mydata)
+```
+
+```{r}
+pca <- prcomp(t(mydata), scale=TRUE) 
+attributes(pca)
+```
+
+```{r}
+plot(pca$x[,1], pca$x[,2],
+     col= c("red", "red", "red", "red", "red",
+            "blue", "blue", "blue", "blue", "blue"))
+```
+
+```{r}
+pca.var <- pca$sdev^2
+pca.var.per <- round(pca.var/sum(pca.var)*100,1)
+pca.var.per
+```
+
+```{r}
+prcomp(t(mydata), scale = TRUE)
+```
+
+```{r}
+x <- read.csv("UK_foods.csv", row.names = 1)
+dim(x)
+```
+```{r}
+head(x)
+```
+
+```{r}
+barplot(as.matrix(x), beside=FALSE, col=rainbow(nrow(x)))
+pairs(x, col=rainbow(10), pch=16)
+
+```
+
+```{r}
+pca <- prcomp( t(x) )
+summary(pca)
+```
+
+```{r}
+plot(pca$x[,1], pca$x[,2], xlab="PC1", ylab="PC2", xlim=c(-270,500))
+text(pca$x[,1], pca$x[,2], colnames(x), col= c("red", "yellow", "blue", "green"))
+```
+
