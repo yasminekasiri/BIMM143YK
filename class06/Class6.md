@@ -1,7 +1,6 @@
 ---
 title: "Class6 R Functions"
 author: "Yasmine Kasiri"
-date: "10/17/2019"
 output: github_document
 ---
 
