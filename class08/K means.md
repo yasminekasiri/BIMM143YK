@@ -1,7 +1,6 @@
 ---
 title: "Class 08 Machine Learning"
 author: "Yasmine Kasiri"
-date: "10/24/2019"
 output: github_document
 ---
 
