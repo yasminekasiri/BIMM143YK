@@ -1,7 +1,6 @@
 ---
 title: "Class 09 Unsupevised Mini Project"
 author: "Yasmine Kasiri"
-date: "10/29/2019"
 output: github_document
 ---
 
