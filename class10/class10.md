@@ -1,7 +1,6 @@
 ---
 title: "Class 10 Find a Gene Assignment"
 author: "Yasmine Kasiri"
-date: "10/31/2019"
 output: github_document
 ---
 
