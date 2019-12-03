@@ -1,7 +1,6 @@
 ---
 title: "Class 7 R Functions and packages"
 author: "Yasmine Kasiri"
-date: "10/22/2019"
 output: github_document
 ---
 
