@@ -1,7 +1,6 @@
 ---
 title: "Class12: Structural Bioinformatics II"
 author: "Yasmine Kasiri"
-date: "11/7/2019"
 output: github_document
 ---
 
